@@ -4,6 +4,7 @@ var filter = document.getElementById('filter');
 
 // Form submit event
 form.addEventListener('submit', addItem);
+
 // Delete event
 itemList.addEventListener('click', removeItem);
 // Filter event
@@ -16,12 +17,20 @@ function addItem(e){
   // Get input value
   var newItem = document.getElementById('item').value;
 
+
   // Create new li element
   var li = document.createElement('li');
   // Add class
   li.className = 'list-group-item';
   // Add text node with input value
   li.appendChild(document.createTextNode(newItem));
+
+  //adding into local storage
+ 
+  localStorage.setItem('itemname', newItem);
+ 
+ 
+  
 
   // Create del button element
 
